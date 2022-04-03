@@ -90,4 +90,10 @@ class NoteTableViewController: UITableViewController {
         self.present(newNoteVC, animated: true)
     }
     
+    @IBAction func goToSettings(_ sender: Any) {
+        print("transfer to settings")
+        let settingsVC = self.storyboard?.instantiateViewController(withIdentifier: "settingsVC") as! SettingsViewController
+        settingsVC.modalPresentationStyle = .fullScreen
+        self.present(settingsVC, animated: true)
+    }
 }

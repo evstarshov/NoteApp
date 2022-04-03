@@ -15,6 +15,8 @@
 		3AB98CDB27F9FDBA00EA2AF9 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CDA27F9FDBA00EA2AF9 /* NewNoteViewController.swift */; };
 		3AB98CDD27F9FEA500EA2AF9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CDC27F9FEA500EA2AF9 /* Database.swift */; };
 		3AB98CDF27FA002100EA2AF9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CDE27FA002100EA2AF9 /* Note.swift */; };
+		3AB98CE227FA15CB00EA2AF9 /* PickerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CE127FA15CB00EA2AF9 /* PickerProvider.swift */; };
+		3AB98CE427FA16AF00EA2AF9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CE327FA16AF00EA2AF9 /* SettingsViewController.swift */; };
 		3ABF38A827F9F13000A7C08D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF38A727F9F13000A7C08D /* AppDelegate.swift */; };
 		3ABF38AA27F9F13000A7C08D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF38A927F9F13000A7C08D /* SceneDelegate.swift */; };
 		3ABF38AF27F9F13000A7C08D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABF38AD27F9F13000A7C08D /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		3AB98CDA27F9FDBA00EA2AF9 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		3AB98CDC27F9FEA500EA2AF9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		3AB98CDE27FA002100EA2AF9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		3AB98CE127FA15CB00EA2AF9 /* PickerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerProvider.swift; sourceTree = "<group>"; };
+		3AB98CE327FA16AF00EA2AF9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3ABF38A427F9F13000A7C08D /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABF38A727F9F13000A7C08D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ABF38A927F9F13000A7C08D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3AB98CE027FA15BB00EA2AF9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3AB98CE127FA15CB00EA2AF9 /* PickerProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		3ABF389B27F9F13000A7C08D = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 		3ABF38A627F9F13000A7C08D /* NoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AB98CE027FA15BB00EA2AF9 /* Services */,
 				3AB98CD527F9F8C500EA2AF9 /* Models */,
 				3ABF38DB27F9F21300A7C08D /* Assets */,
 				3ABF38DA27F9F1F200A7C08D /* Database */,
@@ -167,6 +180,7 @@
 				3ABF38B227F9F13100A7C08D /* LaunchScreen.storyboard */,
 				3AB98CCF27F9F4B600EA2AF9 /* NoteTableViewController.swift */,
 				3AB98CDA27F9FDBA00EA2AF9 /* NewNoteViewController.swift */,
+				3AB98CE327FA16AF00EA2AF9 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,10 +352,12 @@
 			files = (
 				3ABF38A827F9F13000A7C08D /* AppDelegate.swift in Sources */,
 				3AB98CD927F9F90B00EA2AF9 /* NoteCellFactory.swift in Sources */,
+				3AB98CE427FA16AF00EA2AF9 /* SettingsViewController.swift in Sources */,
 				3AB98CD027F9F4B600EA2AF9 /* NoteTableViewController.swift in Sources */,
 				3ABF38AA27F9F13000A7C08D /* SceneDelegate.swift in Sources */,
 				3AB98CD727F9F8D600EA2AF9 /* NoteCellModel.swift in Sources */,
 				3AB98CDF27FA002100EA2AF9 /* Note.swift in Sources */,
+				3AB98CE227FA15CB00EA2AF9 /* PickerProvider.swift in Sources */,
 				3AB98CDB27F9FDBA00EA2AF9 /* NewNoteViewController.swift in Sources */,
 				3AB98CDD27F9FEA500EA2AF9 /* Database.swift in Sources */,
 				3AB98CD327F9F57200EA2AF9 /* NoteTableViewCell.swift in Sources */,

@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679.7101449275362" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1816" y="-246"/>
         </scene>
         <!--Note Table View Controller-->
         <scene sceneID="EvB-Ai-vHj">
@@ -90,7 +90,11 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Notes" id="lOj-SI-7R1">
-                                    <barButtonItem key="leftBarButtonItem" title="Settings" id="fKB-8A-wyl"/>
+                                    <barButtonItem key="leftBarButtonItem" title="Settings" id="fKB-8A-wyl">
+                                        <connections>
+                                            <action selector="goToSettings:" destination="5o7-Vs-8w1" id="RN9-Sq-kfz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="WGJ-9c-Czt">
                                         <connections>
                                             <action selector="newNotebtnTapped" destination="5o7-Vs-8w1" id="DOQ-UH-M9K"/>
@@ -123,11 +127,69 @@
             </objects>
             <point key="canvasLocation" x="928" y="76"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Sy9-PD-Dao">
+            <objects>
+                <viewController storyboardIdentifier="settingsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="in0-n4-fts" customClass="SettingsViewController" customModule="NoteApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FNC-ZR-74m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="014-eS-Pf1">
+                                <rect key="frame" x="158" y="44" width="98" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SH3-Bh-NfC">
+                                <rect key="frame" x="129.5" y="413" width="155" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqy-It-XsY">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Clear all notes">
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clearNotes:" destination="H0k-4u-0zd" eventType="touchUpInside" id="sdP-U4-j8W"/>
+                                            <action selector="clearNotesButton:" destination="H0k-4u-0zd" eventType="touchUpInside" id="OXB-fx-ybz"/>
+                                            <action selector="clearNotesButton:" destination="in0-n4-fts" eventType="touchUpInside" id="hN9-Dj-oDd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unN-cc-nJy">
+                                        <rect key="frame" x="0.0" y="39" width="155" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Back to main screen"/>
+                                        <connections>
+                                            <action selector="goToMain:" destination="in0-n4-fts" eventType="touchUpInside" id="FCd-j6-poP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b5P-5a-IP4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SH3-Bh-NfC" firstAttribute="centerY" secondItem="FNC-ZR-74m" secondAttribute="centerY" id="5Gp-8F-MqH"/>
+                            <constraint firstItem="SH3-Bh-NfC" firstAttribute="centerX" secondItem="FNC-ZR-74m" secondAttribute="centerX" id="K2I-rt-7Q4"/>
+                            <constraint firstItem="014-eS-Pf1" firstAttribute="centerX" secondItem="FNC-ZR-74m" secondAttribute="centerX" id="PC9-Yb-luc"/>
+                            <constraint firstItem="014-eS-Pf1" firstAttribute="top" secondItem="b5P-5a-IP4" secondAttribute="top" id="faf-E2-9uo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UwV-Wc-BTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="H0k-4u-0zd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="417.85714285714283"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
