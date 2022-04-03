@@ -27,7 +27,7 @@ class NewNoteViewController: UIViewController {
     
     @IBAction func saveButtonTapped() {
         print("saving note")
-        guard noteNameTextField.text != "" || noteDescriptionTextField.text != "" else {
+        guard noteNameTextField.text != "" && noteDescriptionTextField.text != "" else {
             showAlertTextEmpty()
             return
         }
@@ -57,6 +57,7 @@ class NewNoteViewController: UIViewController {
     // MARK: - Navigation
 
     @IBAction func backButtontapped() {
+        print("back button tapped")
         goToMain()
     }
     

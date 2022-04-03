@@ -20,7 +20,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Create new note" id="atK-iK-XOT">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="ss3-Qi-0Ks"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="ss3-Qi-0Ks">
+                                            <connections>
+                                                <action selector="backButtontapped" destination="BYZ-38-t0r" id="I6f-wL-5uA"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
