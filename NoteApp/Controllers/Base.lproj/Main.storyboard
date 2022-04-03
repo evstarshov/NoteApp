@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Note View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NoteApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newNoteController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="NewNoteViewController" customModule="NoteApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,11 @@
                             <items>
                                 <navigationItem title="Notes" id="lOj-SI-7R1">
                                     <barButtonItem key="leftBarButtonItem" title="Settings" id="fKB-8A-wyl"/>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="WGJ-9c-Czt"/>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="WGJ-9c-Czt">
+                                        <connections>
+                                            <action selector="newNotebtnTapped" destination="5o7-Vs-8w1" id="DOQ-UH-M9K"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -56,6 +60,10 @@
                             <outlet property="delegate" destination="5o7-Vs-8w1" id="yV7-dz-czk"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="newNoteButton" destination="WGJ-9c-Czt" id="nsk-BA-ZeH"/>
+                        <outlet property="settingsButton" destination="fKB-8A-wyl" id="0yb-3k-54T"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgf-rk-wCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
