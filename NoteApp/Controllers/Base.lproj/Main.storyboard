@@ -15,18 +15,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnv-Fz-7ms">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Create new note" id="atK-iK-XOT">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="ss3-Qi-0Ks"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="WVy-lF-l4J">
+                                <rect key="frame" x="15" y="211" width="384" height="89"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7I-Ez-vbk">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ub-kC-nU5">
+                                        <rect key="frame" x="0.0" y="55" width="384" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY2-qP-LMm">
+                                <rect key="frame" x="82" y="308" width="250" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="rOD-aT-DY4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tY2-qP-LMm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="04z-c1-gB0"/>
+                            <constraint firstItem="WVy-lF-l4J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="5Zq-0I-ujJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WVy-lF-l4J" secondAttribute="trailing" constant="15" id="7jl-yc-hBr"/>
+                            <constraint firstItem="bnv-Fz-7ms" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LRW-5U-tDm"/>
+                            <constraint firstItem="WVy-lF-l4J" firstAttribute="top" secondItem="bnv-Fz-7ms" secondAttribute="bottom" constant="123" id="UBB-Ud-gPH"/>
+                            <constraint firstItem="tY2-qP-LMm" firstAttribute="top" secondItem="WVy-lF-l4J" secondAttribute="bottom" constant="8" symbolic="YES" id="fuT-Ho-Hod"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tY2-qP-LMm" secondAttribute="trailing" constant="82" id="kLv-q2-KeG"/>
+                            <constraint firstItem="bnv-Fz-7ms" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xz2-se-fXP"/>
+                            <constraint firstItem="bnv-Fz-7ms" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y2b-DE-5KK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="ss3-Qi-0Ks" id="fic-MN-1lo"/>
+                        <outlet property="noteDescriptionTextField" destination="9Ub-kC-nU5" id="TOF-Oj-Wa2"/>
+                        <outlet property="noteNameTextField" destination="H7I-Ez-vbk" id="MDc-AL-3mE"/>
+                        <outlet property="saveButton" destination="tY2-qP-LMm" id="2af-nO-1CJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="76"/>
+            <point key="canvasLocation" x="1679.7101449275362" y="75.669642857142847"/>
         </scene>
         <!--Note Table View Controller-->
         <scene sceneID="EvB-Ai-vHj">
             <objects>
-                <tableViewController id="5o7-Vs-8w1" customClass="NoteTableViewController" customModule="NoteApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5o7-Vs-8w1" customClass="NoteTableViewController" customModule="NoteApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qVX-tA-rVA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +121,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -28,10 +28,6 @@ class NoteTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return notes.count
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
@@ -88,9 +84,10 @@ class NoteTableViewController: UITableViewController {
     // MARK: - Navigation
     
     @IBAction func newNotebtnTapped() {
-        let newNoteVC = NewNoteViewController()
-        navigationController?.pushViewController(newNoteVC, animated: true)
+        print("Let's make new note")
+        let newNoteVC = self.storyboard?.instantiateViewController(withIdentifier: "newNoteController") as! NewNoteViewController
         newNoteVC.modalPresentationStyle = .fullScreen
+        self.present(newNoteVC, animated: true)
     }
     
 }
