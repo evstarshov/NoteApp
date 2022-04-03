@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NoteCellModel {
+struct NoteCellModel: Codable {
     let name: String
     let description: String
     let date: String

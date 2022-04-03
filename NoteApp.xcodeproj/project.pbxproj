@@ -13,6 +13,7 @@
 		3AB98CD727F9F8D600EA2AF9 /* NoteCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CD627F9F8D600EA2AF9 /* NoteCellModel.swift */; };
 		3AB98CD927F9F90B00EA2AF9 /* NoteCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CD827F9F90B00EA2AF9 /* NoteCellFactory.swift */; };
 		3AB98CDB27F9FDBA00EA2AF9 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CDA27F9FDBA00EA2AF9 /* NewNoteViewController.swift */; };
+		3AB98CDD27F9FEA500EA2AF9 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CDC27F9FEA500EA2AF9 /* Database.swift */; };
 		3ABF38A827F9F13000A7C08D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF38A727F9F13000A7C08D /* AppDelegate.swift */; };
 		3ABF38AA27F9F13000A7C08D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF38A927F9F13000A7C08D /* SceneDelegate.swift */; };
 		3ABF38AF27F9F13000A7C08D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABF38AD27F9F13000A7C08D /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		3AB98CD627F9F8D600EA2AF9 /* NoteCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellModel.swift; sourceTree = "<group>"; };
 		3AB98CD827F9F90B00EA2AF9 /* NoteCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellFactory.swift; sourceTree = "<group>"; };
 		3AB98CDA27F9FDBA00EA2AF9 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		3AB98CDC27F9FEA500EA2AF9 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		3ABF38A427F9F13000A7C08D /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABF38A727F9F13000A7C08D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ABF38A927F9F13000A7C08D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		3ABF38DA27F9F1F200A7C08D /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				3AB98CDC27F9FEA500EA2AF9 /* Database.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				3ABF38AA27F9F13000A7C08D /* SceneDelegate.swift in Sources */,
 				3AB98CD727F9F8D600EA2AF9 /* NoteCellModel.swift in Sources */,
 				3AB98CDB27F9FDBA00EA2AF9 /* NewNoteViewController.swift in Sources */,
+				3AB98CDD27F9FEA500EA2AF9 /* Database.swift in Sources */,
 				3AB98CD327F9F57200EA2AF9 /* NoteTableViewCell.swift in Sources */,
 				3ABF38DD27F9F24300A7C08D /* Note.swift in Sources */,
 			);
