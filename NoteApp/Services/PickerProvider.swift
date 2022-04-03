@@ -1,103 +1,86 @@
-//
-//  PickerProvider.swift
-//  NoteApp
-//
-//  Created by Евгений Старшов on 03.04.2022.
-//
-
-import MobileCoreServices
 import UIKit
 
-class CameraProvider: NSObject {
+public protocol ImagePickerDelegate: class {
+    func didSelect(image: UIImage?)
+}
 
-    enum PhotoLibraryTypes {
-        case photoLibrary, savedPhotosAlbum
-        var casted: UIImagePickerController.SourceType {
-            switch self {
-            case .photoLibrary: return UIImagePickerController.SourceType.photoLibrary
-            case .savedPhotosAlbum: return UIImagePickerController.SourceType.savedPhotosAlbum
-            }
-        }
-    }
+open class ImagePicker: NSObject {
 
-    public typealias SourceType = UIImagePickerController.SourceType
-    public typealias ImagePicker = UIImagePickerController
-    public typealias Delegate = UINavigationControllerDelegate & UIImagePickerControllerDelegate
+    private let pickerController: UIImagePickerController
+    private weak var presentationController: UIViewController?
+    private weak var delegate: ImagePickerDelegate?
 
-    private let delegate: Delegate
+    public init(presentationController: UIViewController, delegate: ImagePickerDelegate) {
+        self.pickerController = UIImagePickerController()
 
-    init(delegate: Delegate) {
+        super.init()
+
+        self.presentationController = presentationController
         self.delegate = delegate
+
+        self.pickerController.delegate = self
+        self.pickerController.allowsEditing = true
+        self.pickerController.mediaTypes = ["public.image"]
     }
 
-    // MARK: - Public
-
-    public func getImagePicker(source: PhotoLibraryTypes,
-                               canEditPhotos: Bool = true,
-                               onlyImages: Bool = false) throws -> ImagePicker {
-
-        do {
-            return try getBaseController(
-                source: source.casted,
-                allowsEditing: canEditPhotos,
-                onlyImages: onlyImages
-            )
-        } catch {
-            throw error
+    private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
+        guard UIImagePickerController.isSourceTypeAvailable(type) else {
+            return nil
         }
-    }
 
-    public func getCamera(canEditPhotos: Bool = true,
-                          onlyImages: Bool = false) throws -> ImagePicker {
-
-        do {
-            let picker = try getBaseController(
-                source: .camera,
-                allowsEditing: canEditPhotos,
-                onlyImages: onlyImages
-            )
-
-            if UIImagePickerController.isCameraDeviceAvailable(.rear) {
-                picker.cameraDevice = .rear
-            } else if UIImagePickerController.isCameraDeviceAvailable(.front) {
-                picker.cameraDevice = .front
-            } else {
-                throw "No known camera type available"
-            }
-
-            picker.showsCameraControls = true
-            return picker
-        } catch {
-            throw error
+        return UIAlertAction(title: title, style: .default) { [unowned self] _ in
+            self.pickerController.sourceType = type
+            self.presentationController?.present(self.pickerController, animated: true)
         }
     }
 
-    // MARK: - Private
+    public func present(from sourceView: UIView) {
 
-    private func getBaseController(source: SourceType,
-                                   allowsEditing: Bool,
-                                   onlyImages: Bool) throws -> ImagePicker {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        guard UIImagePickerController.isSourceTypeAvailable(source) else {
-            throw "Requested source not available"
+        if let action = self.action(for: .camera, title: "Take photo") {
+            alertController.addAction(action)
+        }
+        if let action = self.action(for: .savedPhotosAlbum, title: "Camera roll") {
+            alertController.addAction(action)
+        }
+        if let action = self.action(for: .photoLibrary, title: "Photo library") {
+            alertController.addAction(action)
         }
 
-        let picker = UIImagePickerController()
-        let imageType = kUTTypeImage as String
-        picker.sourceType = source
-        picker.allowsEditing = allowsEditing
-        picker.delegate = self.delegate
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-        if onlyImages,
-           let mediaTypes = UIImagePickerController.availableMediaTypes(for: source),
-           mediaTypes.contains(imageType){
-            picker.mediaTypes = [imageType]
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alertController.popoverPresentationController?.sourceView = sourceView
+            alertController.popoverPresentationController?.sourceRect = sourceView.bounds
+            alertController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
         }
 
-        return picker
+        self.presentationController?.present(alertController, animated: true)
+    }
+
+    private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
+        controller.dismiss(animated: true, completion: nil)
+
+        self.delegate?.didSelect(image: image)
     }
 }
 
-extension String: LocalizedError {
-    public var errorDescription: String? { return self }
+extension ImagePicker: UIImagePickerControllerDelegate {
+
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.pickerController(picker, didSelect: nil)
+    }
+
+    public func imagePickerController(_ picker: UIImagePickerController,
+                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[.editedImage] as? UIImage else {
+            return self.pickerController(picker, didSelect: nil)
+        }
+        self.pickerController(picker, didSelect: image)
+    }
+}
+
+extension ImagePicker: UINavigationControllerDelegate {
+
 }

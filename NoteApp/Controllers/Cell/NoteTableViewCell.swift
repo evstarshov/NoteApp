@@ -8,10 +8,13 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
+    
+    let dateFormatter = DateFormatter()
 
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var noteDateLabel: UILabel!
     @IBOutlet weak var noteDescriptionLabel: UILabel!
+    @IBOutlet weak var noteImage: UIImageView!
     
     
     override func awakeFromNib() {
@@ -28,6 +31,6 @@ class NoteTableViewCell: UITableViewCell {
         self.noteNameLabel.text = cellModel.name
         self.noteDateLabel.text = cellModel.date
         self.noteDescriptionLabel.text = cellModel.description
+        self.noteImage.image = cellModel.image?.toImage()
     }
-    
 }

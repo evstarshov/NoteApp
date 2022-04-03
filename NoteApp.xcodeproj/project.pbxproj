@@ -17,6 +17,7 @@
 		3AB98CDF27FA002100EA2AF9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CDE27FA002100EA2AF9 /* Note.swift */; };
 		3AB98CE227FA15CB00EA2AF9 /* PickerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CE127FA15CB00EA2AF9 /* PickerProvider.swift */; };
 		3AB98CE427FA16AF00EA2AF9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CE327FA16AF00EA2AF9 /* SettingsViewController.swift */; };
+		3AB98CE627FA201C00EA2AF9 /* UIimageStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB98CE527FA201C00EA2AF9 /* UIimageStringConverter.swift */; };
 		3ABF38A827F9F13000A7C08D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF38A727F9F13000A7C08D /* AppDelegate.swift */; };
 		3ABF38AA27F9F13000A7C08D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF38A927F9F13000A7C08D /* SceneDelegate.swift */; };
 		3ABF38AF27F9F13000A7C08D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABF38AD27F9F13000A7C08D /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		3AB98CDE27FA002100EA2AF9 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		3AB98CE127FA15CB00EA2AF9 /* PickerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerProvider.swift; sourceTree = "<group>"; };
 		3AB98CE327FA16AF00EA2AF9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3AB98CE527FA201C00EA2AF9 /* UIimageStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageStringConverter.swift; sourceTree = "<group>"; };
 		3ABF38A427F9F13000A7C08D /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABF38A727F9F13000A7C08D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ABF38A927F9F13000A7C08D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB98CE127FA15CB00EA2AF9 /* PickerProvider.swift */,
+				3AB98CE527FA201C00EA2AF9 /* UIimageStringConverter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABF38A827F9F13000A7C08D /* AppDelegate.swift in Sources */,
+				3AB98CE627FA201C00EA2AF9 /* UIimageStringConverter.swift in Sources */,
 				3AB98CD927F9F90B00EA2AF9 /* NoteCellFactory.swift in Sources */,
 				3AB98CE427FA16AF00EA2AF9 /* SettingsViewController.swift in Sources */,
 				3AB98CD027F9F4B600EA2AF9 /* NoteTableViewController.swift in Sources */,

@@ -7,20 +7,25 @@
 
 import UIKit
 
-class NewNoteViewController: UIViewController {
+class NewNoteViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let noteDB = NotesDB()
-    var noteToadd = [Note]()
-    
     let dateFormatter = DateFormatter()
+    let dateNow = Date.now
+    
+    var noteToadd = [Note]()
+    var imagePicker: ImagePicker!
     
     @IBOutlet weak var noteNameTextField: UITextField!
     @IBOutlet weak var noteDescriptionTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var imagePickButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     // MARK: - Methods
@@ -31,13 +36,22 @@ class NewNoteViewController: UIViewController {
             showAlertTextEmpty()
             return
         }
-        let note = Note(name: noteNameTextField.text ?? "error", description: noteDescriptionTextField.text ?? "error", date: dateFormatter.string(from: Date.now), correctionDate: nil, image: nil)
+        let image = self.imageView.image
+        let imageData = image?.toPngString()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        let date = dateFormatter.string(from: Date())
+        print(date)
+        let note = Note(name: noteNameTextField.text ?? "error", description: noteDescriptionTextField.text ?? "error", date: date, correctionDate: nil, image: imageData)
         noteToadd = noteDB.retrieveNotes()
         noteToadd.append(note)
         noteDB.save(notes: noteToadd)
         goToMain()
     }
     
+    @IBAction func takeImage(_ sender: Any) {
+        self.imagePicker.present(from: sender as! UIView)
+    }
     
     private func showAlertTextEmpty() {
             let alertController = UIAlertController(
@@ -69,3 +83,12 @@ class NewNoteViewController: UIViewController {
     }
 
 }
+
+extension NewNoteViewController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        self.imageView.image = image
+    }
+}
+
+

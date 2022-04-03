@@ -16,44 +16,52 @@
                 <rect key="frame" x="0.0" y="0.0" width="725" height="234"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="u99-ba-kE4">
-                        <rect key="frame" x="40" y="30" width="675" height="166"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="u99-ba-kE4">
+                        <rect key="frame" x="25" y="16" width="575" height="202"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCI-st-Sl9">
-                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="NoteName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCI-st-Sl9">
+                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="66.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIb-cC-xyP">
-                                <rect key="frame" x="0.0" y="39" width="72.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteDate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIb-cC-xyP">
+                                <rect key="frame" x="0.0" y="67.5" width="72.5" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRn-lT-ggp">
-                                <rect key="frame" x="0.0" y="74.5" width="124" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="NoteDescription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRn-lT-ggp">
+                                <rect key="frame" x="0.0" y="135.5" width="124" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EpH-Ht-rQu">
-                                <rect key="frame" x="0.0" y="110" width="124" height="56"/>
-                            </imageView>
                         </subviews>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EpH-Ht-rQu">
+                        <rect key="frame" x="605" y="67" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="eu3-TA-7T4"/>
+                            <constraint firstAttribute="width" constant="100" id="jgK-bz-Fp1"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="u99-ba-kE4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="8ha-ha-S5J"/>
-                    <constraint firstAttribute="trailing" secondItem="u99-ba-kE4" secondAttribute="trailing" constant="10" id="Ab6-fl-oNf"/>
-                    <constraint firstItem="u99-ba-kE4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="GMR-Sq-RMH"/>
-                    <constraint firstAttribute="bottom" secondItem="u99-ba-kE4" secondAttribute="bottom" constant="38" id="V9c-Lq-FcT"/>
+                    <constraint firstItem="u99-ba-kE4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Dfv-pi-71u"/>
+                    <constraint firstItem="EpH-Ht-rQu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="67" id="FPl-B4-ijl"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="u99-ba-kE4" secondAttribute="bottom" constant="5" id="Ua4-cF-5RK"/>
+                    <constraint firstItem="u99-ba-kE4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="bpe-Yc-pxl"/>
+                    <constraint firstAttribute="bottom" secondItem="EpH-Ht-rQu" secondAttribute="bottom" constant="67" id="fea-aV-B64"/>
+                    <constraint firstItem="EpH-Ht-rQu" firstAttribute="leading" secondItem="u99-ba-kE4" secondAttribute="trailing" constant="5" id="rJl-nG-5Z5"/>
+                    <constraint firstAttribute="trailing" secondItem="EpH-Ht-rQu" secondAttribute="trailing" constant="20" id="rQ8-Eo-Cqb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="noteDateLabel" destination="eIb-cC-xyP" id="7IQ-g2-2YI"/>
                 <outlet property="noteDescriptionLabel" destination="KRn-lT-ggp" id="zBj-4G-7Fi"/>
+                <outlet property="noteImage" destination="EpH-Ht-rQu" id="s7a-mK-tqg"/>
                 <outlet property="noteNameLabel" destination="zCI-st-Sl9" id="YL5-LC-hLH"/>
             </connections>
             <point key="canvasLocation" x="97.826086956521749" y="174.77678571428569"/>
