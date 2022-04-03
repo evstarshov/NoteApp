@@ -33,10 +33,13 @@ class NoteTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseIdentifier, for: indexPath)
-
-        // Configure the cell...
-
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseIdentifier, for: indexPath)
+        guard let cell = dequeuedCell as? NoteTableViewCell else {
+            return dequeuedCell
+        }
+        let note = self.notes[indexPath.row]
+        let cellModel = NoteCellFactory.cellModel(from: note)
+        cell.configure(with: cellModel)
         return cell
     }
     

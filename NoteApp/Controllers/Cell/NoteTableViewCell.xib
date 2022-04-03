@@ -9,31 +9,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="NoteTableViewCell" customModule="NoteApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="725" height="200"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="234" id="KGk-i7-Jjw" customClass="NoteTableViewCell" customModule="NoteApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="725" height="234"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="725" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="725" height="234"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NoteName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCI-st-Sl9">
-                        <rect key="frame" x="40" y="30" width="101" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NoteDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRn-lT-ggp">
-                        <rect key="frame" x="40" y="90" width="124" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="u99-ba-kE4">
+                        <rect key="frame" x="40" y="30" width="675" height="166"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCI-st-Sl9">
+                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIb-cC-xyP">
+                                <rect key="frame" x="0.0" y="39" width="72.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoteDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRn-lT-ggp">
+                                <rect key="frame" x="0.0" y="74.5" width="124" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EpH-Ht-rQu">
+                                <rect key="frame" x="0.0" y="110" width="124" height="56"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="u99-ba-kE4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="8ha-ha-S5J"/>
+                    <constraint firstAttribute="trailing" secondItem="u99-ba-kE4" secondAttribute="trailing" constant="10" id="Ab6-fl-oNf"/>
+                    <constraint firstItem="u99-ba-kE4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="GMR-Sq-RMH"/>
+                    <constraint firstAttribute="bottom" secondItem="u99-ba-kE4" secondAttribute="bottom" constant="38" id="V9c-Lq-FcT"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="97.826086956521749" y="163.39285714285714"/>
+            <connections>
+                <outlet property="noteDateLabel" destination="eIb-cC-xyP" id="7IQ-g2-2YI"/>
+                <outlet property="noteDescriptionLabel" destination="KRn-lT-ggp" id="zBj-4G-7Fi"/>
+                <outlet property="noteNameLabel" destination="zCI-st-Sl9" id="YL5-LC-hLH"/>
+            </connections>
+            <point key="canvasLocation" x="97.826086956521749" y="174.77678571428569"/>
         </tableViewCell>
     </objects>
 </document>
