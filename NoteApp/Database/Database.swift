@@ -14,7 +14,7 @@ final class NotesDB {
     
     private let key = "notes"
     
-    func save(notes: [NoteCellModel]) {
+    func save(notes: [Note]) {
         do {
             let data = try self.encoder.encode(notes)
             UserDefaults.standard.set(data, forKey: key)
@@ -23,12 +23,12 @@ final class NotesDB {
         }
     }
     
-    func retrieveNotes() -> [NoteCellModel] {
+    func retrieveNotes() -> [Note] {
         guard let data = UserDefaults.standard.data(forKey: key) else {
             return []
         }
         do {
-            return try self.decoder.decode([NoteCellModel].self, from: data)
+            return try self.decoder.decode([Note].self, from: data)
         } catch {
             print(error)
             return []
